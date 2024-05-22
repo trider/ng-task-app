@@ -43,7 +43,6 @@ export class HomeComponent implements OnInit{
   ) { }
   ngOnInit(): void {
     this.user = JSON.parse(sessionStorage.getItem('user') || '{}');
-    this.user = JSON.parse(sessionStorage.getItem('user') || '{}');
     this.tableData = this.tasks.filter((task:any) => task.user === this.user.userName);
   }
 
