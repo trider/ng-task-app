@@ -1,8 +1,12 @@
 <app-navbar></app-navbar>
 <div class="container container-fluid"  style="padding: 10px">
-  <div *ngIf="!tableData" class="spinner-border text-center" role="status">
-    <span class="visually-hidden">Loading...</span>
-  </div>
+  <h2 class="text-center" *ngIf="!tableData" >  
+    <div class="spinner-border" role="status" style="padding:0.4%">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+    <br/> Loading Data...
+
+  </h2>
   <app-table *ngIf="tableData" [tableData]="tableData" [tableCols]="tableCols"></app-table>
 </div>
 

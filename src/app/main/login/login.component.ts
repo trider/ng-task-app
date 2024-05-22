@@ -46,22 +46,9 @@ export class LoginComponent implements OnInit{
   }
 
 
+
+
   onSubmit() {    
-
-    this.httpService.postServiceData('/login', this.loginForm.value).subscribe((response:any) => { 
-
-      console.log('response', response);
-      if(response.isLoggedIn){
-        alert(JSON.stringify(response));
-        sessionStorage.setItem('user', JSON.stringify(response));
-        this.router.navigate(['/home']);
-      }
-    })
-    
-
-  }
-
-  _onSubmit() {    
 
     this.user = this.users.filter((user:any) => user.email === this.loginForm.value.email && user.password === this.loginForm.value.password)[0];
     if(this.user !== null ){
